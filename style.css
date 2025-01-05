@@ -4,9 +4,14 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
 }
 header {
-    background: url('header-bg.jpg') no-repeat center center/cover;
+    background: url('images/header-bg.jpg') no-repeat center center/cover;
     color: black; /* 黒文字に変更 */
     text-align: center;
     padding: 100px 0;
@@ -39,13 +44,13 @@ main {
 section {
     margin: 40px 0;
 }
-.about, .contact, .earthquake-bot, .admin, .articles, .article-detail {
+.about, .contact, .earthquake-bot, .admin, .articles, .article-detail, .visitor-counter, .feedback {
     background-color: #e0e0e0;
     padding: 20px;
     border-radius: 10px;
     transition: transform 0.2s;
 }
-.about:hover, .contact:hover, .earthquake-bot:hover, .articles:hover {
+.about:hover, .contact:hover, .earthquake-bot:hover, .articles:hover, .visitor-counter:hover, .feedback:hover {
     transform: scale(1.05);
 }
 footer {
@@ -60,24 +65,24 @@ footer {
 .twitter-link {
     margin-top: 20px;
 }
-.admin-form {
+.admin-form, #feedback-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.admin-form input, .admin-form textarea {
+.admin-form input, .admin-form textarea, #feedback-form input, #feedback-form textarea {
     margin: 10px 0;
     padding: 10px;
     width: 80%;
 }
-.admin-form button {
+.admin-form button, #feedback-form button {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
 }
-.admin-form button:hover {
+.admin-form button:hover, #feedback-form button:hover {
     background-color: #45a049;
 }
 .article {
@@ -130,9 +135,14 @@ footer {
     nav {
         flex-direction: column;
     }
-    .admin-form input, .admin-form textarea {
+    .admin-form input, .admin-form textarea, #feedback-form input, #feedback-form textarea {
         width: 100%;
     }
+}
+.github-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
@@ -149,9 +159,4 @@ footer {
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
     }
-}
-.github-corner {
-    position: absolute;
-    top: 0;
-    right: 0;
 }
