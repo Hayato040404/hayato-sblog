@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayatoのブログ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hayatoのブログへようこそ！</h1>
+        <a href="https://github.com/Hayato040404/your-repo" target="_blank" class="github-corner" aria-label="View source on GitHub">
+            <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+                <path d="M0 0l115 115h15l12 27 108 108V0z"></path>
+                <path d="M128 109c-15-5-17-11-17-11s-3-7 0-11c3-5 6-6 6-6s-3-2-6-6c-3-4 0-11 0-11s2-6 17-11c15-5 15-11 15-11s-3-7 0-11c3-5 6-6 6-6s-3-2-6-6c-3-4 0-11 0-11s2-6 17-11c15-5 15-11 15-11s-3-7 0-11c3-5 6-6 6-6s-3-2-6-6c-3-4 0-11 0-11s2-6 17-11c15-5 15-11 15-11s-3-7 0-11c3-5 6-6 6-6v248H0z" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+                <path d="M115 115c-15 5-17 11-17 11s-3 7 0 11c3 5 6 6 6 6s-3 2-6 6c-3 4 0 11 0 11s2 6 17 11c15 5 15 11 15 11s3 7 0 11c-3 5-6 6-6 6s3 2 6 6c3 4 0 11 0 11s-2 6-17 11c-15 5-15 11-15 11s-3 7 0 11c3 5 6 6 6 6s-3 2-6 6c-3 4 0 11 0 11s-2 6-17 11c-15 5-15 11-15 11s-3 7 0 11c3 5 6 6 6 6v248H0V0h250z" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            </svg>
+        </a>
+    </header>
+    <nav>
+        <a href="#home">ホーム</a>
+        <a href="#about">私について</a>
+        <a href="#earthquake-bot">地震ボット</a>
+        <a href="#articles">記事一覧</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="javascript:login()">管理者設定</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>ホーム</h2>
+            <p>これはHayatoのシンプルかつスタイリッシュなウェブサイトのホームページです。</p>
+            <img src="profile.jpg" alt="Hayatoの写真" style="width:200px; border-radius:50%;">
+        </section>
+        
+        <section id="about" class="about">
+            <h2>私について</h2>
+            <p>こんにちは、Hayatoです。ウェブ開発やデザインに情熱を持っています。最新の技術やトレンドを追いかけ、常にスキルを磨いています。趣味は登山と写真撮影です。</p>
+        </section>
+        
+        <section id="earthquake-bot" class="earthquake-bot">
+            <h2>地震ボット</h2>
+            <p>私はGoogle Apps Scriptを使用して、地震情報をリアルタイムでTwitterに投稿するボットを運営しています。最新の地震情報をチェックするには、以下のTwitterリンクをフォローしてください。</p>
+            <a href="https://twitter.com/saigai_anaunsu" target="_blank" class="twitter-link">
+                <img src="twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @saigai_anaunsu
+            </a>
+        </section>
+        
+        <section id="articles-section" class="articles">
+            <h2>記事一覧</h2>
+            <div id="articles-container"></div>
+        </section>
+        
+        <section id="article-detail" class="article-detail"></section>
+        
+        <section id="contact" class="contact">
+            <h2>お問い合わせ</h2>
+            <p>何か質問があれば、以下のTwitterリンクからお気軽にご連絡ください。</p>
+            <a href="https://twitter.com/hayatozusi" target="_blank" class="twitter-link">
+                <img src="twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @hayatozusi
+            </a>
+        </section>
+        
+        <section id="admin-section" class="admin" style="display: none;">
+            <h2>管理者設定</h2>
+            <form class="admin-form" onsubmit="event.preventDefault(); saveArticle();">
+                <input type="text" id="article-title" placeholder="記事のタイトル" required>
+                <textarea id="article-content" rows="5" placeholder="記事の内容" required></textarea>
+                <input type="file" id="article-image" accept="image/*">
+                <button type="submit">記事を保存</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>著作権 &copy; 2025 Hayatoのブログ</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
