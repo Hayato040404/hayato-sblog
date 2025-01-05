@@ -150,3 +150,8 @@ footer {
         animation: octocat-wave 560ms ease-in-out;
     }
 }
+.github-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
