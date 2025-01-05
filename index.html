@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayatoのブログ</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Hayatoのブログへようこそ！</h1>
        
+        <button id="dark-mode-toggle">ダークモード切り替え</button>
     </header>
     <nav>
         <a href="#home">ホーム</a>
@@ -23,25 +25,26 @@
         <section id="home">
             <h2>ホーム</h2>
             <p>これはHayatoのシンプルかつスタイリッシュなウェブサイトのホームページです。</p>
-            <img src="profile.jpg" alt="Hayatoの写真" style="width:200px; border-radius:50%;">
+            <img src="images/profile.jpg" alt="Hayatoの写真" style="width:200px; border-radius:50%;">
         </section>
         
         <section id="about" class="about">
             <h2>私について</h2>
-            <p>こんにちは、Hayatoです。ウェブ開発やデザインに情熱を持っています。最新の技術やトレンドを追いかけ、常にスキルを磨いています。</p>
+            <p>こんにちは、Hayatoです。ウェブ開発やデザインに情熱を持っています。最新の技術やトレンドを追いかけ、常にスキルを磨いています。趣味は登山と写真撮影です。</p>
         </section>
         
         <section id="earthquake-bot" class="earthquake-bot">
             <h2>地震ボット</h2>
             <p>私はGoogle Apps Scriptを使用して、地震情報をリアルタイムでTwitterに投稿するボットを運営しています。最新の地震情報をチェックするには、以下のTwitterリンクをフォローしてください。</p>
             <a href="https://twitter.com/saigai_anaunsu" target="_blank" class="twitter-link">
-                <img src="twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @saigai_anaunsu
+                <img src="images/twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @saigai_anaunsu
             </a>
         </section>
         
         <section id="articles-section" class="articles">
             <h2>記事一覧</h2>
             <div id="articles-container"></div>
+            <button onclick="showRandomArticle()">ランダム記事表示</button>
         </section>
         
         <section id="article-detail" class="article-detail"></section>
@@ -50,7 +53,7 @@
             <h2>お問い合わせ</h2>
             <p>何か質問があれば、以下のTwitterリンクからお気軽にご連絡ください。</p>
             <a href="https://twitter.com/hayatozusi" target="_blank" class="twitter-link">
-                <img src="twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @hayatozusi
+                <img src="images/twitter-icon.png" alt="Twitterアイコン" style="width:30px;"> @hayatozusi
             </a>
         </section>
         
@@ -63,11 +66,24 @@
                 <button type="submit">記事を保存</button>
             </form>
         </section>
+
+        <section id="visitor-counter" class="visitor-counter">
+            <h2>現在の訪問者数</h2>
+            <p id="visitor-count">0</p>
+        </section>
+
+        <section id="feedback" class="feedback">
+            <h2>フィードバック</h2>
+            <form id="feedback-form">
+                <input type="text" id="feedback-name" placeholder="名前" required>
+                <textarea id="feedback-message" rows="5" placeholder="メッセージ" required></textarea>
+                <button type="submit">送信</button>
+            </form>
+        </section>
     </main>
     <footer>
-        <p>著作権 &copy; 2025 Hayatoのブログ Powered by github</p>
-        
+        <p>著作権 &copy; 2025 Hayatoのブログ</p>
+        <p>このサイトはGitHub Copilotを使用して作成されています。</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
