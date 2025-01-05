@@ -1,6 +1,8 @@
-// Load articles from local storage and display them
 document.addEventListener('DOMContentLoaded', function() {
     loadArticles();
+    updateVisitorCount();
+    document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+    document.getElementById('feedback-form').addEventListener('submit', submitFeedback);
 });
 
 function saveArticle() {
@@ -63,6 +65,42 @@ function showArticleDetail(index) {
 function hideArticleDetail() {
     document.getElementById('article-detail').style.display = 'none';
     document.getElementById('articles-section').style.display = 'block';
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function updateVisitorCount() {
+    const visitorCountElement = document.getElementById('visitor-count');
+    // Dummy implementation for visitor count update
+    let visitorCount = parseInt(localStorage.getItem('visitorCount') || '0', 10);
+    visitorCount += 1;
+    localStorage.setItem('visitorCount', visitorCount);
+    visitorCountElement.textContent = visitorCount;
+}
+
+function submitFeedback(event) {
+    event.preventDefault();
+    const name = document.getElementById('feedback-name').value;
+    const message = document.getElementById('feedback-message').value;
+    if (name && message) {
+        alert('フィードバックありがとうございます！');
+        document.getElementById('feedback-name').value = '';
+        document.getElementById('feedback-message').value = '';
+    } else {
+        alert('名前とメッセージを入力してください。');
+    }
+}
+
+function showRandomArticle() {
+    const articles = JSON.parse(localStorage.getItem('articles')) || [];
+    if (articles.length > 0) {
+        const randomIndex = Math.floor(Math.random() * articles.length);
+        showArticleDetail(randomIndex);
+    } else {
+        alert('表示する記事がありません。');
+    }
 }
 
 function login() {
